@@ -1,14 +1,12 @@
-import { Component } from '@angular/core';
-import * as CryptoJS from 'crypto-js';
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-encryption-decryption',
+  templateUrl: './encryption-decryption.component.html',
+  styleUrls: ['./encryption-decryption.component.scss']
 })
-export class AppComponent {
-  title = 'EncryptionDecryptionSample';
+export class EncryptionDecryptionComponent implements OnInit {
 
   plainText: string = '';
   encryptText: string = '';
@@ -17,8 +15,24 @@ export class AppComponent {
   conversionEncryptOutput: string = '';
   conversionDecryptOutput: string = '';
 
+  PlainTextForBackend = ''
+  returnEncKeyFromBackend = ''
+
+  encyptedTextForfrontEnd = ''
+  returnDecTextFromFront = ''
+
+
+  PlainTextForFrontend = ''
+  encyptedTextForbackend = ''
+
+  encryptionKeyRecFromBackend = ''
+  encryptionKeyRecFromFrontend = ''
   constructor(private httpClint: HttpClient,) {
   }
+
+  ngOnInit(): void {
+  }
+
   //method is used to encrypt and decrypt the text  
   convertText(conversion: string) {
     if (conversion == "encrypt") {
@@ -33,8 +47,8 @@ export class AppComponent {
   encryptDataFromBackEnd(data: any) {
 
     this.getEncryData(this.plainText).subscribe(
-      response => {
-        console.log('This is enc result-->', response)
+      (response: any) => {
+        console.log('This is enc result-->', response.response)
       },
       err => {
         console.log('This is enc Error-->', err)
