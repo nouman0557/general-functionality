@@ -3,93 +3,77 @@
     <h1 class="text-center">Encrypt-Decrypt with AES256-GCM</h1>
     <br>
     <div>
+
         <div class="row">
             <div class="col-sm-6">
-                <!-- <button type="button" class="btn btn-primary btn-lg btn-block">
-                    Encryption From Back-end
-                </button> -->
                 Encryption From Back-end
                 <br>
                 <div class="form-group">
-                    <!-- <label for="txtTextToConvert">Enter plain text</label> -->
-                    <input type="text" class="form-control" placeholder="Enter text you want to encrypt"
-                        [(ngModel)]="plainText">
+                    <input type="text" class="form-control" placeholder="Enter object you want to encrypt"
+                        [(ngModel)]="PlainTextForBackend">
                 </div>
 
-                <!-- <div class="form-group">
-        <label for="txtPassword">Enc Key</label>
-        <input type="text" class="form-control" placeholder="Enter encryption password" [(ngModel)]="encPassword">
-      </div> -->
-                <textarea class="form-control" readonly rows="3">{{conversionEncryptOutput}}</textarea>
+                <textarea class="form-control" readonly rows="3">{{returnEncKeyFromBackend}}</textarea>
                 <br>
                 <button type="button" class="btn btn-success float-right"
-                    (click)="encryptDataFromBackEnd('encrypt')">Encrypt</button>
+                    (click)="encryptDataFromBackEnd()">Encrypt</button>
             </div>
             <div class="col-sm-6">
-                <button type="button" class="btn btn-dark btn-lg btn-block">
-                    Decryption From Front End
-                </button>
+                Decryption From Front End
                 <br>
                 <div class="form-group">
-                    <label for="txtTextToConvert">Encrypted Text</label>
-                    <input type="text" class="form-control" placeholder="Enter text you want to decrypt"
-                        [(ngModel)]="encryptText">
+                    <input type="text" class="form-control" placeholder="Enter encrypted Key that you want to decrypt"
+                        [(ngModel)]="encyptedTextForfrontEnd">
                 </div>
-
-                <!-- <div class="form-group">
-        <label for="txtPassword">Enc Key</label>
-        <input type="text" class="form-control" placeholder="Enter decryption password" [(ngModel)]="decPassword">
-      </div> -->
-                <textarea class="form-control" readonly rows="3">{{conversionDecryptOutput}}</textarea>
+                <textarea class="form-control" readonly rows="3">{{returnDecTextFromFront}}</textarea>
                 <br>
-                <button type="button" class="btn btn-success float-right"
-                    (click)="convertText('decrypt')">Decrypt</button>
+                <button type="button" class="btn btn-primary float-right "
+                    (click)="decryptDataFromFrontEnd()">Decrypt</button>
             </div>
         </div>
     </div>
-
+    <div *ngIf="loading" class="spinner-div">
+           <div class="loader">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                    <div></div>
+                </div>
+    </div>
     <br>
     <div>
         <div class="row">
             <div class="col-sm-6">
-                <button type="button" class="btn btn-primary btn-lg btn-block">
-                    Encryption Frm Front-end
-                </button>
+                Encryption Frm Front-end
                 <br>
                 <div class="form-group">
-                    <label for="txtTextToConvert">Plain Text</label>
                     <input type="text" class="form-control" placeholder="Enter text you want to encrypt"
-                        [(ngModel)]="plainText">
+                        [(ngModel)]="PlainTextForfrontEnd">
                 </div>
-
-                <!-- <div class="form-group">
-        <label for="txtPassword">Enc Key</label>
-        <input type="text" class="form-control" placeholder="Enter encryption password" [(ngModel)]="encPassword">
-      </div> -->
-                <textarea class="form-control" readonly rows="3">{{conversionEncryptOutput}}</textarea>
+                <textarea class="form-control" readonly rows="3">{{returnEncKeyFromfrontEnd}}</textarea>
                 <br>
-                <button type="button" class="btn btn-success float-right"
+                <button type="button" class="btn btn-primary float-right"
                     (click)="convertText('encrypt')">Encrypt</button>
             </div>
             <div class="col-sm-6">
-                <button type="button" class="btn btn-dark btn-lg btn-block">
-                    Decryption From Backend
-                </button>
+                Decryption From Backend
                 <br>
                 <div class="form-group">
-                    <label for="txtTextToConvert">Encrypted Text</label>
                     <input type="text" class="form-control" placeholder="Enter text you want to decrypt"
-                        [(ngModel)]="encryptText">
+                        [(ngModel)]="encyptedTextForBackend">
                 </div>
-
-                <!-- <div class="form-group">
-        <label for="txtPassword">Enc Key</label>
-        <input type="text" class="form-control" placeholder="Enter decryption password" [(ngModel)]="decPassword">
-      </div> -->
-                <textarea class="form-control" readonly rows="3">{{conversionDecryptOutput}}</textarea>
+                <textarea class="form-control" readonly rows="3">{{returnDecTextFromBackend}}</textarea>
                 <br>
                 <button type="button" class="btn btn-success float-right"
-                    (click)="convertText('decrypt')">Decrypt</button>
+                    (click)="decryptDataFromBackEnd()">Decrypt</button>
             </div>
         </div>
     </div>

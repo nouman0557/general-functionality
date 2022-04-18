@@ -1,1 +1,56 @@
-<p>file-uploading works!</p>
+<div class="page">
+
+    <h1 class="text-center">Upload File</h1>
+    <br>
+    <div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <!-- Select your file File -->
+                <br>
+                <div class="form-group">
+                    <label for="url">Enter URL</label>
+                    <input type="text" [(ngModel)]="fileUrl" name="url" id="url" class="form-control"
+                        placeholder="For example http://www.abc.com/file-uploading">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="url">Select Your File</label>
+                    <input type="file" name="url" (change)="onFileSelected($event)" id="url" class="form-control"
+                        placeholder="">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="url">Select File Type</label>
+                    <select class="form-control" [(ngModel)]="fileType" data-placeholder="">
+                        <option value="base64">Base 64</option>
+                        <option value="multipart">Multipart </option>
+                    </select>
+                </div>
+                <br>
+                <span class="upload-text" *ngIf="fileUploadedMsg"> {{fileUploadedMsgText}} </span>
+                <br> <br>
+                <button type="button" class="btn btn-success float-right" (click)="submit()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="loading" class="spinner-div">
+           <div class="loader">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                    <div></div>
+                </div>
+    </div>
+    <br>
+
+
+</div>

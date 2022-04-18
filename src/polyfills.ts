@@ -47,7 +47,9 @@
  */
 import 'zone.js';  // Included with Angular CLI.
 
+// import 'crypto';
 
+// 'resolve.fallback: { "crypto": require.resolve("crypto-browserify") }'
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */

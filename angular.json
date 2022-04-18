@@ -21,7 +21,8 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
-              "crypto-js"
+              "crypto-js",
+              "crypto"
             ],
             "outputPath": "dist/encryption-decryption",
             "index": "src/index.html",
