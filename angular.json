@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Encryption-Decryption": {
+    "general-functionality": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -21,10 +21,9 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
-              "crypto-js",
-              "crypto"
+              "crypto-js"
             ],
-            "outputPath": "dist/encryption-decryption",
+            "outputPath": "dist/general-functionality",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -79,10 +78,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Encryption-Decryption:build:production"
+              "browserTarget": "general-functionality:build:production"
             },
             "development": {
-              "browserTarget": "Encryption-Decryption:build:development"
+              "browserTarget": "general-functionality:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -90,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Encryption-Decryption:build"
+            "browserTarget": "general-functionality:build"
           }
         },
         "test": {
@@ -114,5 +113,5 @@
       }
     }
   },
-  "defaultProject": "Encryption-Decryption"
+  "defaultProject": "general-functionality"
 }

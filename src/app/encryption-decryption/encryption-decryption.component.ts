@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import * as CryptoJS from 'crypto-js';
-// const crypto = require('crypto');
-// import * as crypto from 'crypto';
 
 @Component({
   selector: 'app-encryption-decryption',
@@ -104,15 +102,6 @@ export class EncryptionDecryptionComponent implements OnInit {
     // let object = JSON.parse(orignalText);
     // return object
 
-    // let textParts = text.split(':');
-    // let iv = Buffer.from(textParts.shift(), 'hex');
-    // let encryptedText = Buffer.from(textParts.join(':'), 'hex');
-    // let decipher = crypto.createDecipheriv('aes-256-cbc', Buffer.from(key), iv);
-
-    // let decrypted = decipher.update(encryptedText);
-    // let final = decipher.final();
-    // decrypted = Buffer.concat([decrypted, final]);
-    // return decrypted.toString();
   }
 
   authTag = ''

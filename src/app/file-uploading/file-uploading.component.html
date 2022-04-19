@@ -15,8 +15,14 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="url">Select Your File</label>
-                    <input type="file" name="url" (change)="onFileSelected($event)" id="url" class="form-control"
+                    <label for="url">Select Your File For Enc</label>
+                    <input type="file" name="url" (change)="encrypt($event)" id="url" class="form-control"
+                        placeholder="">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="url">Select Your File For Dec</label>
+                    <input type="file" name="url" (change)="decrypt($event)" id="url" class="form-control"
                         placeholder="">
                 </div>
                 <br>
